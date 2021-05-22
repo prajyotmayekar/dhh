@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './css/index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import HttpsRedirect from 'react-https-redirect';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <HttpsRedirect>
+      <App />
+    </HttpsRedirect>
   </React.StrictMode>,
   document.getElementById('root')
 );

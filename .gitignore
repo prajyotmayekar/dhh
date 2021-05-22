@@ -8,6 +8,13 @@
 # testing
 /coverage
 
+.env
+.firebase/
+.firebaserc
+firebase.json
+.gitignore
+
+
 # production
 /build
 

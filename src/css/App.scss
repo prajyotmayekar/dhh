@@ -1,0 +1,564 @@
+
+$orange_color: #FC2D44;
+$grey_color: #909090;
+
+header{
+  height:80px;
+  width:100%;
+  outline:0px solid blue;
+  position:fixed;
+  top:0;
+  background: #fff;
+  z-index:10;
+  padding: 0 20px;
+  #header-left{
+    width:20%;
+    float:left;
+    padding-top: 15px;
+    outline:0px solid red;
+    min-width:157px;
+
+    #header_logo{
+      height: 50px;
+      width: auto;
+      float:left;
+    }
+    #header_text{
+      float: left;
+      color:$grey_color;
+      line-height: 15px;
+      padding-left:5px;
+      padding-top:2px;
+    }
+  }
+
+  #header-right{
+    width:80%;
+    float:right;
+    outline:0px solid blue;
+    padding-top: 18px;
+    min-width:259px;
+
+    ul#header-nav{
+      float:right;
+        list-style-type: none;
+        margin: 0;
+        padding: 10px 0;
+        overflow: hidden;
+        li{
+          float: left;
+          padding:0 10px;
+
+          #saperatorDiv{
+            border-right: 0.2px solid $grey_color;
+            height: 40px;
+            position: relative;
+            top: -10px;
+          }
+          
+          a{
+              display: block;
+              color: black;
+              text-align: center;
+              // padding: 14px 16px;
+              text-decoration: none;
+          }
+        }
+    }
+
+    #login_btn{
+      background:#fff;
+      color:#000;
+      padding:0;
+      border:0;
+      width:100px;
+      height:40px;
+      outline:1px solid #C4C4C4;
+      margin:0 41px 0 0;
+      border-radius:3px;
+      float:right;
+    }
+
+    #register_btn{
+      background:$orange_color;
+      color:#fff;
+      padding:0;
+      border:0;
+      width:100px;
+      height:40px;
+      margin:0 10px 0 7px;
+      border-radius:3px;
+      float:right;
+    }
+  }
+}
+
+#liSaperator{
+    border-right:0.5 solid $grey_color;
+}
+
+.propGird_itemCont:last-child {
+    margin: 0 !important;
+    outline:1px solid orange;
+}
+
+footer{
+  height:250px;
+  width:100%;
+  outline:0px solid rgb(116, 116, 116);
+  bottom:0;
+  background:#F6F6F7;
+  margin-top:100px;
+
+  #dhh_footerCircle{
+    background-color: #EDEFF1;
+    height: 350px;
+    width: 350px;
+    border-radius: 265px;
+    position: absolute;
+    left: -170px;
+  }
+}
+
+#body_container{
+  outline:0px solid green;
+  margin-top: 80px;
+  height:calc(100% - 80px);
+}
+
+.full_width{
+  width:100%;
+}
+
+#banner_image{
+    height:400px;
+    width:100%;
+    background:black;
+    // background-image: url("homepage-banner.jpg");
+    //background-image: url("homepage-banner.jpg") !important;
+    // background-size: cover;
+
+    #banner_title{
+      width:100%;
+      outline:0px solid green;
+      color:#fff;
+      height:200px;
+      position:relative;
+      top:22%;
+      text-align:center;
+      
+      h1{
+        font-size:45px;
+        margin:5px 0;
+      }
+
+      .subTitle{
+        color:#A7A5A5;
+        font-weight:bold;
+      }
+
+      #search_widget{
+        margin-top:20px;
+        #search_district{
+          width:250px;
+          color: #A7A5A5;
+          font-size:16px;
+          padding: 20px 40px 20px 50px;
+          border:0;
+          margin-right:3px;
+        }
+        #search_checkIn{
+          width:100px;
+          color: #A7A5A5;
+          font-size:16px;
+          padding: 20px 40px;
+          border:0;
+          margin-right:3px;
+        }
+        #search_checkOut{
+          width:100px;
+          color: #A7A5A5;
+          font-size:16px;
+          padding: 20px 40px;
+          border:0;
+          margin-right:3px;
+        }
+        #total_guests{
+          width:100px;
+          color: #A7A5A5;
+          font-size:16px;
+          padding: 20px 40px;
+          border:0;
+        }
+        #search_button{
+          background:$orange_color;
+          color:#fff;
+          padding:0;
+          border:0;
+          width:150px;
+          height:60px;
+          position:absolute;
+        }
+      }
+
+      #search_linksCont{
+        width:100%;
+        margin-top:15px;
+        .search_links{
+          padding:0 10px;
+          color:$orange_color;
+          text-decoration: none;
+          font-size:15px;
+          font-weight:bold;
+        }
+      }
+
+    }
+    #banner_btmTitle{
+      // display:inline-block;
+      position:relative;
+      outline:0px solid white;
+      color:#fff;
+      font-weight:bold;
+      bottom: -143px;
+      left: 14px;
+    }
+}
+
+section{
+  margin:20px;
+}
+
+
+/* Properties grid css */
+.title_container{
+  width:100%;
+  height:50px;
+  outline:0px solid orange;
+  h2{
+    padding: 15px 0 0 0;
+  }
+}
+
+.cboth{
+  clear:both !important;
+}
+
+.propGrid_continer{
+  width:100%;
+  outline:0px solid black;
+  clear:both !important;
+  overflow:hidden;
+  transition: all 0.5s !important;
+
+  .propGird_itemCont{
+    width:23%;
+    outline:0px solid red;
+    float:left;
+    text-align:center;
+    padding: 12px 12px;
+    transition: all 0.5s !important;
+    .propGird_item{
+      width:100%;
+      height:auto;
+      margin:0 auto;
+      transition: all 0.5s !important;
+      .prop_image{
+        width:100%;
+        height:auto;
+        transition: all 0.4s !important;
+        transform: scale(1);
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      .propDesc{
+        color:#000;
+        float:left;
+        font-weight:bold;
+        padding-top:5px;
+      }
+      .propLoc{
+        color:grey;
+        float:left;
+        padding-top:2px;
+      }
+      .propPriceLeft{
+        float:left;
+        width:60%;
+        text-align:left;
+      }
+      .propReviewRight{
+        float:right;
+        width:40%;
+        text-align:right;
+
+        .review_starCont{
+          float:right;
+          img.review_star{
+            width:11px;
+            height:auto;
+            float:left;
+            padding: 3px 2px 0 2px;
+          }
+        }
+        
+
+        .total_reviews{
+          font-weight:bold;
+          display:inline;
+          float:right;
+          .dot_saperator{
+            display: inline-block;
+            position: relative;
+            bottom: 6px;
+            padding: 0 4px;
+          }
+        }
+      }
+    }
+  }
+
+  .exploreCity_itemCont{
+    width:48%;
+    float:left;
+    text-align:center;
+    padding: 12px 12px;
+
+    .exploreImage{
+      width:100%;
+      height:auto;
+    }
+
+    .explore_topCont{
+      position:relative;
+      width:100%;
+      color:white;
+      top:30px;
+      .explore_leftInfo{
+        float:left;
+        padding-left:15px;
+      }
+      .explore_rightInfo{
+        float:right;
+        padding-right:15px;
+      }
+    }
+
+    .explore_bottomCont{
+      position:relative;
+      width:100%;
+      color:white;
+      bottom:135px;
+      text-align:left;
+      padding: 0 25px;
+
+      h2{
+        margin:5px 0;
+        font-size:42px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .reviewsGird_itemCont{
+    width:23%;
+    outline:0px solid red;
+    float:left;
+    text-align:center;
+    padding: 12px 12px;
+    
+    .reviewGird_item{
+      width:100%;
+      height:auto;
+      margin:0 auto;
+      outline:0px solid red;
+      overflow:hidden;
+      background-color:#F6F6F7;
+
+      .revier_imageCont{
+        float:left;
+        width:20%;
+
+        .revier_image{
+          width:60px;
+          height:auto;
+        }
+      }
+
+      .revier_details{
+        float:left;
+        width:50%;
+        h4{
+          margin:0 0 5px 0;
+        }
+      }
+      .revier_star{
+        float:left;
+        width:30%;
+      }
+
+      .review_text{
+        width:100%;
+        padding-top:10px;
+        float:left;
+      }
+    }
+  }
+}
+
+.exploreCity_continer{
+  width:100%;
+  outline:0px solid black;
+  clear:both !important;
+  overflow:hidden;
+  margin:0 -12px;
+
+  .exploreCity_itemCont{
+    width:50%;
+    outline:1px solid;
+    float:left;
+  }
+}
+
+.exploreAll_container{
+  width:100%;
+  outline:0px solid red;
+  margin:20px 0;
+  .exploreBtn{
+    height: 50px;
+    width: 130px;
+    border: 0.1px solid #DADADA;
+    color: #F00025;
+    border-radius: 4px;
+    background: #fff;
+    font-weight:bold;
+    font-size:12px;
+    .total_rev{
+      color:#4D4D4D;
+      display: inline;
+      padding-left: 7px;
+    }
+    
+  }
+}
+/* Properties grid css */
+
+.propGrid_continer .propGird_itemCont:first-child{
+  padding-left: 0;
+}
+
+
+
+#feature_banner{
+  #feature_bannerImage{
+    width:100%;
+    height:auto;
+  }
+  #banner_TextCont{
+    width:100%;
+    height:100%;
+    background:orange;
+  }
+}
+
+
+
+@media screen and (max-width: 1238px) {
+  .propGrid_continer{
+    .propGird_itemCont{
+      width:30%;
+    }
+
+    .exploreCity_itemCont{
+      width:40%;
+      float:left;
+      text-align:center;
+      padding: 12px 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 1167px) {
+  ul#header-nav{
+      li{
+        padding:0 5px !important;
+      }
+  }
+}
+
+@media screen and (max-width: 868px) {
+  #header-nav{
+    display:none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .propGrid_continer{
+    .propGird_itemCont{
+      width:46% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 785px) {
+
+  #search_widget{
+    display:none;
+  }
+
+  ul#header-nav{
+    li{
+      display:none;
+    }
+  }
+  #header-left{
+    width:20% !important;
+    outline:0px solid orange !important;
+  }
+  
+  #header-right{
+    // width:80% !important;
+    width:calc(80% - 147px) !important;
+    outline:0px solid blue !important;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  #banner_title{
+      h1{
+        font-size:35px !important;
+      }
+  }
+  .propGrid_continer{
+    .propGird_itemCont{
+      width:45% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .propGrid_continer{
+    .propGird_itemCont{
+      width:90% !important;
+    }
+  }
+  #header-right{
+    display:none;
+  }
+
+  #banner_title{
+      h1{
+        font-size:28px !important;
+      }
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .propGrid_continer{
+    .propGird_itemCont{
+      width:90% !important;
+    }
+  }
+}
