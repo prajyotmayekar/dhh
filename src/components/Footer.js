@@ -110,7 +110,7 @@ function Footer() {
                     Terms & policies
                 </div>
                 <div id="made-with">
-                    made with <b className="t-name">twentytwenty*</b>
+                    made with <b className="t-name">tentwenty*</b>
                 </div>
             </div>
         </footer>
