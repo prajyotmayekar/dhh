@@ -10,12 +10,9 @@ import { useJwt } from "react-jwt";
 function PropertiesGrid(props) {
     const [propData,setPropData] = useState('');
     var JWT_token = reactLocalStorage.get('JWT-token');
-    const {isExpired } = useJwt(JWT_token);
+   // const {isExpired } = useJwt(JWT_token);
 
     useEffect(() => {
-        JWT_token = reactLocalStorage.get('JWT-token');
-        if(!isExpired){
-            console.log(JWT_token);
         fetch(process.env.REACT_APP_API_DOMAIN+"homepage-properties"+"/"+props.prop_cat,{
             headers: new Headers({
                 'Authorization': 'bearer '+JWT_token, 
@@ -31,10 +28,7 @@ function PropertiesGrid(props) {
                 
         	}	
         )
-        }else{
-            get_JWT_token(process.env.REACT_APP_API_DOMAIN+'login');
-        }
-	},[JWT_token]);
+	},[]);
 
     return (
         <div>

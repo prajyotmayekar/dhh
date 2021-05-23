@@ -11,30 +11,26 @@ function PropertiesGrid() {
     const [reviewData,setReviewData] = useState('');
 
     var JWT_token = reactLocalStorage.get('JWT-token');
-    const {isExpired } = useJwt(JWT_token);
+    // const {isExpired } = useJwt(JWT_token);
 
     useEffect(() => {
-        if(!isExpired){
-            fetch(process.env.REACT_APP_API_DOMAIN+"reviews",{
-                headers: new Headers({
-                    'Authorization': 'bearer '+JWT_token, 
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                })
+        fetch(process.env.REACT_APP_API_DOMAIN+"reviews",{
+            headers: new Headers({
+                'Authorization': 'bearer '+JWT_token, 
+                'Content-Type': 'application/x-www-form-urlencoded'
             })
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setReviewData(result.data);
-                    console.log(reviewData);
-                },
-                (error) => {
-                    
-                }	
-            )
-        }else{
-            get_JWT_token(process.env.REACT_APP_API_DOMAIN+'login');
-        }
-	},[JWT_token]);
+        })
+        .then(res => res.json())
+        .then(
+            (result) => {
+                setReviewData(result.data);
+                console.log(reviewData);
+            },
+            (error) => {
+                
+            }	
+        )
+	},[]);
 
     return (
         <div>
