@@ -14,8 +14,6 @@ function PropertiesGrid() {
     const {isExpired } = useJwt(JWT_token);
 
     useEffect(() => {
-		
-
         if(!isExpired){
             fetch(process.env.REACT_APP_API_DOMAIN+"reviews",{
                 headers: new Headers({
@@ -36,7 +34,7 @@ function PropertiesGrid() {
         }else{
             get_JWT_token(process.env.REACT_APP_API_DOMAIN+'login');
         }
-	},[]);
+	},[JWT_token]);
 
     return (
         <div>

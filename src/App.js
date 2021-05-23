@@ -19,9 +19,7 @@ import {reactLocalStorage} from 'reactjs-localstorage';
 
 
 function App() {
-  useEffect(() => {
-    get_JWT_token(process.env.REACT_APP_API_DOMAIN+'login');
-	},[]);
+  reactLocalStorage.set('JWT-token',process.env.REACT_APP_JWT_TOKEN);
 
   return (
     <div className="App">
