@@ -14,6 +14,7 @@ function Home() {
                 <PropertiesGrid title="Apartments on Seaside" prop_cat="1"/>
                 <ExploreCity title="Explore the city"/>
                 <PropertiesGrid title="Apartments on Seaside" prop_cat="2"/>
+                <PropertiesGrid title="The most beautifull view from the windows" prop_cat="1" smaller_boxes="1"/>
                 <FeatureBanner/>
                 <ReviewsGrid/>
                 <PropertiesGrid title="Apartments on Seaside" prop_cat="3"/>

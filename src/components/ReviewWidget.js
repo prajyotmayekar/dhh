@@ -1,7 +1,6 @@
 import React from 'react'
 
 function ReviewWidget(props) {
-    console.log(props);
     let reviewArray = [];
     if(props.review_stars){
         for(let i=1;i<=5;i++){
@@ -12,8 +11,6 @@ function ReviewWidget(props) {
             }
         }
     }
-
-    console.log(reviewArray);
     return (
         <React.Fragment>
             

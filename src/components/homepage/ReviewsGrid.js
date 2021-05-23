@@ -1,6 +1,43 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import {reactLocalStorage} from 'reactjs-localstorage';
 
-function PropertiesGrid(props) {
+import ReviewsGridItem from './ReviewsGridItem'
+
+import {get_JWT_token} from '../../utils/utils.js'
+
+import { useJwt } from "react-jwt";
+
+function PropertiesGrid() {
+    const [reviewData,setReviewData] = useState('');
+
+    var JWT_token = reactLocalStorage.get('JWT-token');
+    const {isExpired } = useJwt(JWT_token);
+
+    useEffect(() => {
+		
+
+        if(!isExpired){
+            fetch(process.env.REACT_APP_API_DOMAIN+"reviews",{
+                headers: new Headers({
+                    'Authorization': 'bearer '+JWT_token, 
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                })
+            })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setReviewData(result.data);
+                    console.log(reviewData);
+                },
+                (error) => {
+                    
+                }	
+            )
+        }else{
+            get_JWT_token(process.env.REACT_APP_API_DOMAIN+'login');
+        }
+	},[]);
+
     return (
         <div>
             <div className="title_container">
@@ -8,138 +45,13 @@ function PropertiesGrid(props) {
             </div>
 
             <div className="propGrid_continer">
-                <div className="reviewsGird_itemCont">
-                    <div className="reviewGird_item">
-                        <div className="revier_imageCont">
-                            <img src="./logo192.png" className="revier_image" />
-                        </div>
-                        <div className="revier_details">
-                            <h4>Andrew hatfield</h4>
-                            <div>09 September 2018</div>
-                            <div><b>Seaside Villa</b></div>
-                        </div>
-                        <div className="revier_star">
-                            Reviews stars
-                        </div>
-                        <div className="review_text">
-                            Reviews to come here, Reviews to come here Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here
-                        </div>
-                    </div>
-                </div>
-                <div className="reviewsGird_itemCont">
-                    <div className="reviewGird_item">
-                        <div className="revier_imageCont">
-                            <img src="./logo192.png" className="revier_image" />
-                        </div>
-                        <div className="revier_details">
-                            <h4>Andrew hatfield</h4>
-                            <div>09 September 2018</div>
-                            <div><b>Seaside Villa</b></div>
-                        </div>
-                        <div className="revier_star">
-                            Reviews stars
-                        </div>
-                        <div className="review_text">
-                            Reviews to come here, Reviews to come here Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here
-                        </div>
-                    </div>
-                </div>
-                <div className="reviewsGird_itemCont">
-                    <div className="reviewGird_item">
-                        <div className="revier_imageCont">
-                            <img src="./logo192.png" className="revier_image" />
-                        </div>
-                        <div className="revier_details">
-                            <h4>Andrew hatfield</h4>
-                            <div>09 September 2018</div>
-                            <div><b>Seaside Villa</b></div>
-                        </div>
-                        <div className="revier_star">
-                            Reviews stars
-                        </div>
-                        <div className="review_text">
-                            Reviews to come here, Reviews to come here Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here
-                        </div>
-                    </div>
-                </div>
-                <div className="reviewsGird_itemCont">
-                    <div className="reviewGird_item">
-                        <div className="revier_imageCont">
-                            <img src="./logo192.png" className="revier_image" />
-                        </div>
-                        <div className="revier_details">
-                            <h4>Andrew hatfield</h4>
-                            <div>09 September 2018</div>
-                            <div><b>Seaside Villa</b></div>
-                        </div>
-                        <div className="revier_star">
-                            Reviews stars
-                        </div>
-                        <div className="review_text">
-                            Reviews to come here, Reviews to come here Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here
-                        </div>
-                    </div>
-                </div>
-                <div className="reviewsGird_itemCont">
-                    <div className="reviewGird_item">
-                        <div className="revier_imageCont">
-                            <img src="./logo192.png" className="revier_image" />
-                        </div>
-                        <div className="revier_details">
-                            <h4>Andrew hatfield</h4>
-                            <div>09 September 2018</div>
-                            <div><b>Seaside Villa</b></div>
-                        </div>
-                        <div className="revier_star">
-                            Reviews stars
-                        </div>
-                        <div className="review_text">
-                            Reviews to come here, Reviews to come here Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here
-                        </div>
-                    </div>
-                </div>
-                <div className="reviewsGird_itemCont">
-                    <div className="reviewGird_item">
-                        <div className="revier_imageCont">
-                            <img src="./logo192.png" className="revier_image" />
-                        </div>
-                        <div className="revier_details">
-                            <h4>Andrew hatfield</h4>
-                            <div>09 September 2018</div>
-                            <div><b>Seaside Villa</b></div>
-                        </div>
-                        <div className="revier_star">
-                            Reviews stars
-                        </div>
-                        <div className="review_text">
-                            Reviews to come here, Reviews to come here Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here
-                        </div>
-                    </div>
-                </div>
-                <div className="reviewsGird_itemCont">
-                    <div className="reviewGird_item">
-                        <div className="revier_imageCont">
-                            <img src="./logo192.png" className="revier_image" />
-                        </div>
-                        <div className="revier_details">
-                            <h4>Andrew hatfield</h4>
-                            <div>09 September 2018</div>
-                            <div><b>Seaside Villa</b></div>
-                        </div>
-                        <div className="revier_star">
-                            Reviews stars
-                        </div>
-                        <div className="review_text">
-                            Reviews to come here, Reviews to come here Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here, Reviews to come here
-                        </div>
-                    </div>
-                </div>
+                {
+                    reviewData.length>0?
+                        <ReviewsGridItem reviewData={reviewData}/>  
+                    :
+                    <p>Loading data please wait...</p>
+                }
             </div>
-            <div className="cboth"></div>
-            <div className="exploreAll_container"> 
-                <button className="exploreBtn">Show other</button>
-            </div>
-            <div className="cboth"></div>
         </div>
     )
 }

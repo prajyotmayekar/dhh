@@ -7,7 +7,7 @@ function ExploreCity(props) {
                 <h2>{props.title}</h2>
             </div>
             <div className="propGrid_continer">
-                <div className="exploreCity_itemCont">
+                <div className="exploreCity_itemCont explore_left">
                     <div className="explore_topCont">
                         <div className="explore_leftInfo">
                             78 Properties
@@ -28,7 +28,7 @@ function ExploreCity(props) {
                         </div>
                     </div>
                 </div>
-                <div className="exploreCity_itemCont">
+                <div className="exploreCity_itemCont explore_right">
                     <div className="explore_topCont">
                         <div className="explore_leftInfo">
                             78 Properties

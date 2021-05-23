@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './css/App.scss';
 
 import Header from './components/Header'
@@ -13,8 +13,16 @@ import {
   Link
 } from "react-router-dom";
 
+import {get_JWT_token} from './utils/utils.js'
+
+import {reactLocalStorage} from 'reactjs-localstorage';
+
 
 function App() {
+  useEffect(() => {
+    get_JWT_token(process.env.REACT_APP_API_DOMAIN+'login');
+	},[]);
+
   return (
     <div className="App">
       <Header/>

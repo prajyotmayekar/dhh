@@ -110,13 +110,102 @@ footer{
   background:#F6F6F7;
   margin-top:100px;
 
+  #footer-notation{
+    width:calc(100% - 60px);
+    float:left;
+    height:50px;
+    border-top:1px solid #E4E2E5;
+    color:#69696A;
+    margin:0 30px;
+    font-size:14px;
+    padding-top:17px;
+
+    #right-reserved{
+      width:50%;
+      float:left;
+    }
+
+    #terms-policies{
+      width:30%;
+      float:left;
+    }
+    #made-with{
+      width:20%;
+      float:left;
+      text-align:right;
+      .t-name{
+        color:#000;
+      }
+    }
+  }
+
   #dhh_footerCircle{
     background-color: #EDEFF1;
     height: 350px;
     width: 350px;
     border-radius: 265px;
-    position: absolute;
+    position: relative;
     left: -170px;
+    top: -43px;
+  }
+
+  .footer_section{
+    width:20%;
+    height:80%;
+    outline:0px solid red;
+    float:left;
+
+    #circular-logo{
+      height: 300px;
+      width: 300px;
+      border-radius: 300px;
+      position: relative;
+      left: -125px;
+      top: -52px;
+      background-color: #EDEFF1;
+    }
+
+    ul.social-links{
+      li{
+        color:#F3012C;
+        font-size:14px;
+      }
+    }
+
+    ul{
+      list-style-type: none;
+      padding-left:0;
+      margin:0;
+      li{
+        padding:8px;
+        color:#9E9E9F;
+        font-size:14px;
+      }
+    }
+
+    .footer-center{
+      text-align:center;
+      width:100%;
+    }
+
+    .footer_title{
+      width:100%;
+      font-weight:bold;
+      padding:30px 0 10px 0;
+      font-size:14px;
+      color:#000 !important;
+    }
+
+    .footer-left{
+      width:50%;
+      float:left;
+      color:#9E9E9F;
+    }
+    .footer-right{
+      width:50%;
+      float:left;
+      color:#9E9E9F;
+    }
   }
 }
 
@@ -244,13 +333,36 @@ section{
   clear:both !important;
 }
 
+        .review_starCont{
+          float:right;
+          img.review_star{
+            width:11px;
+            height:auto;
+            float:left;
+            padding: 3px 2px 0 2px;
+          }
+        }
+        
+
+        .total_reviews{
+          font-weight:bold;
+          display:inline;
+          float:right;
+          .dot_saperator{
+            display: inline-block;
+            position: relative;
+            bottom: 6px;
+            padding: 0 4px;
+          }
+        }
+
 .propGrid_continer{
   width:100%;
   outline:0px solid black;
   clear:both !important;
   overflow:hidden;
   transition: all 0.5s !important;
-
+  
   .propGird_itemCont{
     width:23%;
     outline:0px solid red;
@@ -281,7 +393,7 @@ section{
       .propLoc{
         color:grey;
         float:left;
-        padding-top:2px;
+        padding-bottom:8px;
       }
       .propPriceLeft{
         float:left;
@@ -293,37 +405,89 @@ section{
         width:40%;
         text-align:right;
 
-        .review_starCont{
-          float:right;
-          img.review_star{
-            width:11px;
-            height:auto;
-            float:left;
-            padding: 3px 2px 0 2px;
-          }
+
+      }
+    }
+  }
+  
+  .propGird_itemContSmall{
+    width:18%;
+    outline:0px solid red;
+    float:left;
+    text-align:center;
+    padding: 12px 12px;
+    transition: all 0.5s !important;
+    .propGird_item{
+      width:100%;
+      height:auto;
+      margin:0 auto;
+      transition: all 0.5s !important;
+      font-size:14px;
+      .prop_image{
+        width:100%;
+        height:auto;
+        transition: all 0.4s !important;
+        transform: scale(1);
+        &:hover {
+          transform: scale(1.1);
         }
-        
+      }
+      .propDesc{
+        color:#000;
+        float:left;
+        font-weight:bold;
+        padding-top:5px;
+      }
+      .propLoc{
+        color:grey;
+        float:left;
+        padding-bottom:8px;
+      }
+      .propPriceLeft{
+        float:left;
+        width:60%;
+        text-align:left;
+      }
+      .propReviewRight{
+        float:right;
+        width:40%;
+        text-align:right;
 
         .total_reviews{
-          font-weight:bold;
-          display:inline;
-          float:right;
+          font-size:10px;
           .dot_saperator{
             display: inline-block;
             position: relative;
-            bottom: 6px;
+            bottom: 3px;
             padding: 0 4px;
           }
         }
+
+        img.review_star{
+              width:8px !important;
+              height:auto;
+              float:left;
+              padding: 3px 2px 0 2px;
+            }
+
+
       }
     }
+  }
+  .explore_left{
+    padding-right:15px;
+  }
+
+  .explore_right{
+    padding-left:15px;
   }
 
   .exploreCity_itemCont{
     width:48%;
     float:left;
     text-align:center;
-    padding: 12px 12px;
+    height:auto;
+    
 
     .exploreImage{
       width:100%;
@@ -347,11 +511,11 @@ section{
 
     .explore_bottomCont{
       position:relative;
-      width:100%;
+      width:97%;
       color:white;
       bottom:135px;
       text-align:left;
-      padding: 0 25px;
+      margin-left: 25px;
 
       h2{
         margin:5px 0;
@@ -362,11 +526,12 @@ section{
   }
 
   .reviewsGird_itemCont{
-    width:23%;
+    width:27%;
     outline:0px solid red;
     float:left;
     text-align:center;
-    padding: 12px 12px;
+    padding-right:70px;
+    padding-bottom:20px;
     
     .reviewGird_item{
       width:100%;
@@ -375,22 +540,26 @@ section{
       outline:0px solid red;
       overflow:hidden;
       background-color:#F6F6F7;
+      padding:15px;
 
       .revier_imageCont{
         float:left;
         width:20%;
+        
 
         .revier_image{
           width:60px;
           height:auto;
+          border-radius:50%;
         }
       }
 
       .revier_details{
         float:left;
         width:50%;
+        text-align:left;
         h4{
-          margin:0 0 5px 0;
+          margin:0
         }
       }
       .revier_star{
@@ -414,11 +583,21 @@ section{
   overflow:hidden;
   margin:0 -12px;
 
-  .exploreCity_itemCont{
-    width:50%;
-    outline:1px solid;
-    float:left;
-  }
+  // .exploreCity_itemCont{
+  //   width:50%;
+  //   outline:1px solid;
+  //   float:left;
+  // }
+}
+.footerBtn{
+    height: 50px;
+    width: 130px;
+    border: 0.1px solid #DADADA;
+    color: #F20028;
+    border-radius: 4px;
+    background: #F6F6F7;
+    font-weight:bold;
+    font-size:12px;
 }
 
 .exploreAll_container{
@@ -444,10 +623,6 @@ section{
 }
 /* Properties grid css */
 
-.propGrid_continer .propGird_itemCont:first-child{
-  padding-left: 0;
-}
-
 
 
 #feature_banner{
@@ -471,7 +646,7 @@ section{
     }
 
     .exploreCity_itemCont{
-      width:40%;
+      width:47.5%;
       float:left;
       text-align:center;
       padding: 12px 12px;
@@ -484,6 +659,10 @@ section{
       li{
         padding:0 5px !important;
       }
+  }
+
+  .exploreCity_itemCont{
+    width:47%;
   }
 }
 

@@ -3,13 +3,20 @@ import React, { useState } from 'react';
 import ReviewWidget from '../ReviewWidget'
 
 function PropertiesGridItem(props){
-    console.log(props);
-    const [displayCount,setDisplayCount] = useState(4);
+    if(props.smaller_boxes){
+        var initialValue = 5;
+    }else{
+        var initialValue = 4; 
+    }
+
+    const [displayCount,setDisplayCount] = useState(initialValue);
+    
+    
     const propData = props.propData;
 
     function updateDisplayCount(){
         if(displayCount == propData.length){
-            setDisplayCount(4);
+            setDisplayCount(initialValue);
         }else{
             setDisplayCount(propData.length);
         }
@@ -18,7 +25,7 @@ function PropertiesGridItem(props){
     return (
         <React.Fragment>
             {propData.slice(0,displayCount).map(item => (
-                <div className="propGird_itemCont">
+                <div className={(props.smaller_boxes ? 'propGird_itemContSmall' : 'propGird_itemCont')}>
                     <div className="propGird_item">
                         <img src={"/rooms-images/"+item.image_name} className="prop_image"/>
                         <div className="propDesc">{item.prop_title}</div>
@@ -37,7 +44,7 @@ function PropertiesGridItem(props){
             <div className="exploreAll_container"> 
                 <button className="exploreBtn" onClick={updateDisplayCount}>
 
-                    {displayCount == 4? 
+                    {displayCount == initialValue? 
                         <div>
                             Explore All
                             <div className="total_rev">
